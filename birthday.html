@@ -17,14 +17,20 @@
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
-      overflow-x: hidden;
       text-align: center;
+      overflow-x: hidden;
     }
 
     h1 {
       font-size: 2.5rem;
       color: #ff4081;
-      margin: 1rem 0;
+      margin-top: 1rem;
+    }
+
+    .message {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #5a3e36;
     }
 
     .cake {
@@ -132,7 +138,8 @@
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday! 🎉</h1>
+  <h1>🎉 Happy Birthday Junior! 🎉</h1>
+  <div class="message">💖 Wishing you a joyful and magical birthday! 💖</div>
 
   <div class="cake" id="cake">
     <div class="layer"></div>
@@ -145,7 +152,8 @@
 
   <div class="hint">Blow the candle 🎤</div>
 
-  <audio id="song" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  <!-- 🎵 Happy Birthday Song -->
+  <audio id="song" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d484fa7b39.mp3?filename=happy-birthday-to-you-piano-version-113210.mp3"></audio>
 
   <script>
     let isBlown = false;
@@ -161,7 +169,7 @@
       blowSound.play();
 
       const song = document.getElementById('song');
-      song.volume = 0.6;
+      song.volume = 0.7;
       song.play();
 
       createConfetti();
@@ -206,7 +214,7 @@
           detectBlow();
         })
         .catch(err => {
-          document.querySelector('.hint').textContent = "🎤 Microphone access needed to blow the candle.";
+          document.querySelector('.hint').textContent = "🎤 Please allow microphone to blow the candle.";
         });
     }
 
