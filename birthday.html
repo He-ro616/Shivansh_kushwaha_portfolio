@@ -152,8 +152,8 @@
 
   <div class="hint">Blow the candle 🎤</div>
 
-  <!-- 🎵 Happy Birthday Song -->
-  <audio id="song" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d484fa7b39.mp3?filename=happy-birthday-to-you-piano-version-113210.mp3"></audio>
+  <!-- Hidden YouTube iframe for the Happy Birthday song -->
+  <iframe id="ytSong" width="0" height="0" style="display:none;" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
   <script>
     let isBlown = false;
@@ -165,12 +165,12 @@
       const flame = document.getElementById('flame');
       flame.classList.add('fade-out');
 
+      // Play the blowing sound effect
       const blowSound = new Audio('https://www.soundjay.com/human/sounds/blow-1.mp3');
       blowSound.play();
 
-      const song = document.getElementById('song');
-      song.volume = 0.7;
-      song.play();
+      // Load and play the Happy Birthday song from YouTube
+      document.getElementById('ytSong').src = "https://www.youtube.com/embed/9rM7mRfOfeI?autoplay=1&mute=0";
 
       createConfetti();
     }
